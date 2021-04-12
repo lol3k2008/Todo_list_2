@@ -6,10 +6,108 @@
 
 html{
     font-size: 16px;
-
+    --nav_color: linear-gradient(90deg, rgba(207,207,222,1) 0%, rgba(231,227,227,1) 35%, rgba(162,208,217,1) 100%);
+    --border-color: rgba(162,208,217,1);
+    --header-color: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+    --body-color: linear-gradient(0deg, #64206d 0%, #32a9b6 100%);
+    
 }
 
 body{
+    position: relative;
     width: 100vw;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: var(--body-color) ;
+    color: #ddd;
+ 
+}
+
+.app{
+    width: 600px;
+    min-height: 300px;
+    border: 1px solid var(--border-color);
+    z-index: 10;
+    
+}
+/* ------------------- __HEADER__ ----------------- */
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    background-color: var(--header-color);
+    
+}
+/* ------------------- __MAIN __ ------------------ */
+main, ul{
+    width: 100%;
+}
+.task{
+    width: 100%;
+    padding: 10px;
+    list-style: none;
+    border-bottom: 1px solid grey;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.btn_task{
+    background-image: linear-gradient(to right, #77A1D3 0%, #79CBCA  51%, #77A1D3  100%);
+    margin: 5px;
+    padding: 5px 10px;
+    font-size: 12px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 5px #eee;
+    border-radius: 10px;
+   
+
+}
+
+ .btn_task:hover {
+   background-position: right center;
+   color: #fff;
+   text-decoration: none;
+ }
+
+ 
+/* .btn_end{
+    width: 60px;
+    height: 25px;
+} */
+nav{
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 5vh;
+    border: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   background-image: var(--nav_color);
+}
+.btn_add{
+    width: 50px;
+    height: 100%;
+    cursor: pointer;
+}
+.time{
+    border-left: 1px solid black;
+    padding: 0 5px;
+    color: black;
+    font-weight: bold;
+    letter-spacing: 1px;
 }

@@ -4,10 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/11f13ddcca.js" crossorigin="anonymous"></script>
     <title>Doto_list_2</title>
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-   
-    <h1>Hello world!!</h1>
+
+    <div class="app">
+   <header>
+       <h1>Lista zadań</h1>
+</header>
+
+   <main>
+       <ul class="task_area">
+           <li class="task" id="1">Zadanie 1 
+               <div class="tools_panel">
+                <button class="btn btn_task btn_end"> <i class="fas fa-check"></i></button
+                    ><button class="btn btn_task"><i class="far fa-edit"></i></button>
+                    <button class="btn btn_task"><i class="far fa-trash-alt"></i></button>
+               </div>
+            </li>
+
+           <li class="task" id="2">Zadanie 2 
+               <div class="tools_panel">
+                   <button class="btn btn_task">Zakończ</button
+                    ><button class="btn btn_task">Edytuj</button>
+                    <button class="btn btn_task">Usuń</button>
+               </div>
+            </li>
+       </ul>
+   </main>
+</div>
+
+
+   <nav>
+       <button class="btn btn_add">Dodaj</button>
+       <div class="time"> 00:00</div>
+   </nav>
+   <script src="/script/index.js"></script>
 </body>
 </html>

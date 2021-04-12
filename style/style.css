@@ -60,7 +60,7 @@ main, ul{
     font-weight: bold;
 }
 
-.btn_task{
+.btn_task,.btn_addTask{
     background-image: linear-gradient(to right, #77A1D3 0%, #79CBCA  51%, #77A1D3  100%);
     margin: 5px;
     padding: 5px 10px;
@@ -69,24 +69,27 @@ main, ul{
     text-transform: uppercase;
     transition: 0.5s;
     background-size: 200% auto;
-    color: white;            
+    color: rgb(0, 0, 0);            
     box-shadow: 0 0 5px #eee;
     border-radius: 10px;
-   
+   padding: 5px 20px;
+   cursor: pointer;
 
 }
+.btn_task:focus,.btn_addTask:focus{
+    outline: none;
+    border: 2px solid rgb(45, 45, 75);
+    background-color: #fff;
+}
 
- .btn_task:hover {
+ .btn_task:hover, .btn_addTask:hover{
    background-position: right center;
    color: #fff;
    text-decoration: none;
  }
 
  
-/* .btn_end{
-    width: 60px;
-    height: 25px;
-} */
+
 nav{
     position: fixed;
     bottom: 0px;
@@ -111,3 +114,40 @@ nav{
     font-weight: bold;
     letter-spacing: 1px;
 }
+
+
+/* ----------------- == POPUP_ADD == ----------------------- */
+
+.popup_add{
+position: absolute;
+bottom: 5vh;
+left: 0px;
+width: 30vw;
+height: 20vh;
+padding: 20px;
+border: 1px solid red;
+display: flex;
+flex-direction: column;
+align-items: center;
+border: 1px solid var(--border-color);
+background-color: rgba(17, 17, 17, 0.479);
+}
+
+.input_add{
+    width: 70%;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    color: black;
+}
+.input_add:focus{
+    outline: none;
+    border: 2px solid rgb(45, 45, 75);
+    background-color: #fff;
+}
+
+ .input_add:hover{
+   background-position: right center;
+   color: #fff;
+   text-decoration: none;
+ }

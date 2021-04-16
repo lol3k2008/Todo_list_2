@@ -5,33 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/11f13ddcca.js" crossorigin="anonymous"></script>
-    <title>Doto_list_2</title>
+    <title>Todo_list_2</title>
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
 
     <div class="app">
-   <header>
+   <header class="center">
        <h1>Lista zadań</h1>
+      
 </header>
 
-   <main>
+   <main> 
        <ul class="task_area">
-           <li class="task" id="1">Zadanie 1 
+            <li class="task" id="0">Zrobić zakupy... 
                <div class="tools_panel">
                 <button class="btn btn_task btn_end"> <i class="fas fa-check"></i></button
-                    ><button class="btn btn_task"><i class="far fa-edit"></i></button>
-                    <button class="btn btn_task"><i class="far fa-trash-alt"></i></button>
+                    ><button class="btn btn_task btn_edit"><i class="far fa-edit"></i></button>
+                    <button class="btn btn_task btn_delete"><i class="far fa-trash-alt"></i></button>
                </div>
             </li>
-
+<!-- 
            <li class="task" id="2">Zadanie 2 
             <div class="tools_panel">
                 <button class="btn btn_task btn_end"> <i class="fas fa-check"></i></button
-                    ><button class="btn btn_task"><i class="far fa-edit"></i></button>
-                    <button class="btn btn_task"><i class="far fa-trash-alt"></i></button>
+                    ><button class="btn btn_task btn_edit"><i class="far fa-edit"></i></button>
+                    <button class="btn btn_task btn_delete"><i class="far fa-trash-alt"></i></button>
                </div>
-            </li>
+            </li>  -->
        </ul>
    </main>
 </div>
@@ -43,8 +44,20 @@
    </nav>
 
    <div class="popup_add">
+    <p style="color:tomato" class="alert"></p>
 <input type="text" class="input_add" placeholder="Wpisz treść zadania...">
-<button class="btn btn_addTask">Dodaj</button>
+<button class="btn btn_popup btn_addTask">Dodaj</button>
+</div>
+
+<div class="popup_edit">
+    <h2>Edytuj zadanie...</h2>
+<input type="text" class="input_edit">
+<div class="buttons">
+<button class="btn btn_popup popup_edit_btn">Ok</button>
+<button class="btn btn_popup popup_anuluj_btn">Anuluj</button>
+
+</div>
+
 
    </div>
    <script src="/script/index.js"></script>

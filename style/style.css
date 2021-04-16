@@ -9,8 +9,7 @@ html{
     --nav_color: linear-gradient(90deg, rgba(207,207,222,1) 0%, rgba(231,227,227,1) 35%, rgba(162,208,217,1) 100%);
     --border-color: rgba(162,208,217,1);
     --header-color: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
-    --body-color: linear-gradient(0deg, #64206d 0%, #32a9b6 100%);
-    
+    --body-color: linear-gradient(0deg, #64206d 0%, #32a9b6 100%); 
 }
 
 body{
@@ -22,32 +21,34 @@ body{
     align-items: center;
     background-image: var(--body-color) ;
     color: #ddd;
- 
+    overflow: hidden;
 }
 
 .app{
     width: 600px;
     min-height: 300px;
     border: 1px solid var(--border-color);
-    z-index: 10;
-    
+    z-index: 10; 
 }
+
 /* ------------------- __HEADER__ ----------------- */
 
 header{
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     width: 100%;
     padding: 20px;
     border: 1px solid var(--border-color);
-    background-color: var(--header-color);
-    
+    background-color: var(--header-color);  
 }
+
 /* ------------------- __MAIN __ ------------------ */
+
 main, ul{
     width: 100%;
 }
+
 .task{
     width: 100%;
     padding: 10px;
@@ -60,7 +61,7 @@ main, ul{
     font-weight: bold;
 }
 
-.btn_task,.btn_addTask{
+.btn_task,.btn_popup{
     background-image: linear-gradient(to right, #77A1D3 0%, #79CBCA  51%, #77A1D3  100%);
     margin: 5px;
     padding: 5px 10px;
@@ -74,8 +75,8 @@ main, ul{
     border-radius: 10px;
    padding: 5px 20px;
    cursor: pointer;
-
 }
+
 .btn_task:focus,.btn_addTask:focus{
     outline: none;
     border: 2px solid rgb(45, 45, 75);
@@ -87,8 +88,6 @@ main, ul{
    color: #fff;
    text-decoration: none;
  }
-
- 
 
 nav{
     position: fixed;
@@ -121,9 +120,9 @@ nav{
 .popup_add{
 position: absolute;
 bottom: 5vh;
-left: 0px;
-width: 30vw;
-height: 20vh;
+left: -300px;
+min-width: 300px;
+min-height: 20vh;
 padding: 20px;
 border: 1px solid red;
 display: flex;
@@ -131,13 +130,16 @@ flex-direction: column;
 align-items: center;
 border: 1px solid var(--border-color);
 background-color: rgba(17, 17, 17, 0.479);
+transition: transform .6s;
+z-index: 11;
 }
 
-.input_add{
+.input_add,.input_edit{
     width: 70%;
     margin: 10px;
     padding: 5px;
     border-radius: 5px;
+    font-weight: bold;
     color: black;
 }
 .input_add:focus{
@@ -148,6 +150,49 @@ background-color: rgba(17, 17, 17, 0.479);
 
  .input_add:hover{
    background-position: right center;
-   color: #fff;
    text-decoration: none;
  }
+
+ /* ------_POPUP_EDIT_---------- */
+
+ .popup_edit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+position: absolute;
+z-index: 14;
+width: 400px;
+height: 180px;
+padding: 30px 60px;
+border: solid var(--border-color);
+background-color: rgba(24, 53, 38, 0.856);
+flex-direction: column;
+display: none;
+transition:  .5s;
+ }
+ h2{
+     padding: 10px;
+ }
+
+ /* -------------_DYNAMIC_VARIABLES__------------------ */
+.showPopupAdd{
+    transform: translate(300px, 0);
+}
+.CompleteTask{
+    color: grey;
+    text-decoration: line-through;
+}
+.showPopupEdit{
+display: flex;
+animation: showWindowEdit .5s;
+}
+
+@keyframes showWindowEdit{
+    0%{
+     opacity: 0;
+    }
+    100%{
+      opacity: 1;
+
+    }
+}
